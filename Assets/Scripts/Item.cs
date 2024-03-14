@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private float yMove = -2;
+    public float itemSpeed = -5;
+    public int value;
 
     // Start is called before the first frame update
     void Start()
@@ -15,17 +16,6 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, yMove * Time.deltaTime, 0);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("We collided");
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if ((collision.tag == "Player") || (collision.tag == "Ground"))
-        {
-            Destroy(gameObject);
-        }
+        transform.Translate(0, itemSpeed * Time.deltaTime, 0);
     }
 }
