@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public Transform southPoint;
 
     //spawn speed
-    float spawnDelay = 0.5f;
+    float spawnDelay = 5;
     float timeElapsed = 0;
 
     //score count
