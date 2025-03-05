@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: ed90a742aee3b4328a40b807a148e7ea
+guid: ea1830a3b33794565b0839f1c9b0fccb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - HarzardPrefab: {fileID: 8910317170688417110, guid: 2f250404f425d41779f75167b1c328c3, type: 3}
-  - northPoint: {instanceID: 0}
-  - southPoint: {instanceID: 0}
+  - bulletPrefab: {fileID: 4707116691695778019, guid: 84d297634059643758d101f7ada94054, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

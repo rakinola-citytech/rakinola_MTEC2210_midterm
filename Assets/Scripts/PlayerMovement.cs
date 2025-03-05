@@ -8,23 +8,23 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10;
 
     //audio controls
-    public AudioClip clipGood;
-    public AudioClip clipBad;
-    AudioSource audioSource;
+    //public AudioClip clipGood;
+    //public AudioClip clipBad;
+    //AudioSource audioSource;
 
 
     //spriterender controls
     SpriteRenderer playerSR;
 
     //connection to game manager script
-    public GameManager gM;
+    //public GameManager gM;
 
     //start is called before the first frame update;
     //think pre-game
     void Start()
     {
         //controls
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         playerSR = GetComponent<SpriteRenderer>();
     }
 
@@ -50,30 +50,30 @@ public class PlayerMovement : MonoBehaviour
         if ((collision.tag == "textbooks") || (collision.tag == "nametag"))
         {
             //for demo game purpose -5points each
-            audioSource.PlayOneShot(clipBad);
+            //audioSource.PlayOneShot(clipBad);
             Destroy(collision.gameObject);
             int tempValue = collision.gameObject.GetComponent<Item>().value;
-            gM.ScoreCount(tempValue);
+            //gM.ScoreCount(tempValue);
 
 
         }
         else if(collision.tag == "sleep") 
         {
             //for demo game purpose +10points
-            audioSource.PlayOneShot(clipGood);
+            //audioSource.PlayOneShot(clipGood);
             Destroy(collision.gameObject);
             int tempValue = collision.gameObject.GetComponent<Item>().value;
-            gM.ScoreCount(tempValue);
+            //gM.ScoreCount(tempValue);
         }
         else if (collision.tag == "support")
         {
-            //gameoverx
+            //gameover
             //for demo game purpose +50points
             Debug.Log("Change Theme Icon");
-            audioSource.PlayOneShot(clipGood);
+            //audioSource.PlayOneShot(clipGood);
             Destroy(collision.gameObject);
             int tempValue = collision.gameObject.GetComponent<Item>().value;
-            gM.ScoreCount(tempValue);
+            //gM.ScoreCount(tempValue);
 
         }
     }

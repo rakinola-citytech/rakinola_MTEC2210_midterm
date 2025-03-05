@@ -7,7 +7,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     //player interaction items
-    public GameObject[] items;
+    //public GameObject[] items;
+    public GameObject HarzardPrefab; 
 
     //spawn boundaries
     public Transform northPoint;
@@ -18,11 +19,11 @@ public class GameManager : MonoBehaviour
     float timeElapsed = 0;
 
     //score count
-    public int score;
-    public TextMeshPro scoreText;
+    //public int score;
+    //public TextMeshPro scoreText;
 
     //spawnCount & making transistion icon rare
-    int spawnCount = 0;
+    //int spawnCount = 0;
 
     void Start()
     {
@@ -42,33 +43,33 @@ public class GameManager : MonoBehaviour
         {
             //attempting to make transistion icon rare
             SpawnObject();
-            timeElapsed = 0;
-            spawnCount += 2;
+            //timeElapsed = 0;
+            //spawnCount += 2;
             //Debug.Log(spawnCount);
-            if(spawnCount >= 50)
+            /*if(spawnCount >= 50)
             {
                 Debug.Log(spawnCount);
                 Instantiate(items[3], SpawnPos(), Quaternion.identity);
                 spawnCount = 0;
                 Debug.Log(spawnCount);
-            }
+            }*/
             
             
         }
 
         //score update
-        scoreText.text = "SCORE:" + score.ToString();
+        //scoreText.text = "SCORE:" + score.ToString();
 
     }
 
     public void SpawnObject() 
     {
         //spawnCode
-        int rnd = Random.Range(0, items.Length-1);
-        GameObject clone1 = Instantiate(items[rnd], SpawnPos(), Quaternion.identity);
-        GameObject clone2 = Instantiate(items[rnd], SpawnPos(), Quaternion.identity);
-        clone1.GetComponent<Item>().itemSpeed = Random.Range(-5, -2);
-        clone2.GetComponent<Item>().itemSpeed = Random.Range(-4, -1);
+        //int rnd = Random.Range(0, items.Length-1);
+        //GameObject clone1 = Instantiate(items[rnd], SpawnPos(), Quaternion.identity);
+        GameObject clone = Instantiate(HarzardPrefab, SpawnPos(), Quaternion.identity);
+        clone.GetComponent<Item>().itemSpeed = Random.Range(-5, -2);
+        //clone2.GetComponent<Item>().itemSpeed = Random.Range(-4, -1);
 
         
     }
@@ -81,10 +82,10 @@ public class GameManager : MonoBehaviour
         return (temp);
     }
 
-    public void ScoreCount(int value)
+    /*public void ScoreCount(int value)
     {
         score += value;
-    }
+    }*/
    
     
 }

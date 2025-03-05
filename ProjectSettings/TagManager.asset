@@ -11,14 +11,15 @@ TagManager:
   - support
   - Ground
   - Background
+  - bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Bullet
   - 
   - 
   - 
